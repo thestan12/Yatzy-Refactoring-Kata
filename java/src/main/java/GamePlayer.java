@@ -3,6 +3,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class GamePlayer {
     private int d1;
     private int d2;
@@ -28,6 +32,10 @@ public class GamePlayer {
 
     public boolean allNumHaveSameValue(){
         return Arrays.stream(this.numToArrays()).min().orElse(0) == Arrays.stream(this.numToArrays()).max().orElse(0);
+    }
+
+    public boolean isFullHouse(){
+        return scorePairesTotal().values().stream().distinct().count() == 2;
     }
 
     public int getMaxValue(int valueBrelan){
